@@ -1,19 +1,30 @@
-import {useState} from "react"
-
+// import {useState} from "react"
+import { setItem,setCuisine,setDiet } from "./inputSlice";
+import {useDispatch, useSelector} from "react-redux"
 
 export default function Form(){
-    const [input,setInput]=useState({
-        item:"",
-        cuisine:"",
-        diet:""
-    })
-    
+ // state variable just incase not using redux
+    // const [input,setInput]=useState({
+    //     item:"",
+    //     cuisine:"",
+    //     diet:""  
+    // })
+    const input=useSelector((state)=> state.input)
+    const dispatch=useDispatch()
     function handleChange(evt){
-        setInput({
-            ...input,
-            [evt.target.id]: evt.target.value})
+        if(evt.target.id == "item"){
+        dispatch(setItem(evt.target.value))
+        }else if(evt.target.id == "cuisine"){
+            dispatch(setCuisine(evt.target.value))
+        }else{
+            dispatch(setDiet(evt.target.value))
+        }
+// logic to setInput incase not using redux
+        // setInput({
+        //     ...input,
+        //     [evt.target.id]: evt.target.value})
     }
-    console.log(input)
+    // console.log(input)
     function handleSubmit(){
         // go to page with recipe details
     }
