@@ -12,14 +12,15 @@ const inputSlice = createSlice({
     reducers: {
         // dispatch(setInput(evt.target.value))
         setItem: (state, action) => {
-            state.item=action.payload
-
+            // action.payload.toLowerCase()
+            state.item = action.payload
+            console.log(action.payload)
         },
         setCuisine: (state, action) => {
             state.cuisine = action.payload
         },
         setDiet: (state, action) => {
-            state.diet= action.payload
+            state.diet = action.payload
         },
     }
 })

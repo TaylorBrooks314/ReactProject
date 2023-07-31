@@ -1,29 +1,24 @@
-import { useState,useEffect } from 'react'
+// import { useState,useEffect } from 'react'
 import './App.css'
 import Homepage from './pages/Homepage'
+import Recipes from './pages/Recipes'
+import Recipe from "./pages/Recipe"
+import {Routes, Route} from "react-router-dom"
+import Header from './components/Header'
 
 function App() {
 
   // const [data, setData]=useState([])
 
-  // async function getdata(){
-    // let url= ""
-    // // apiKey=8257c75632784d01af59abaed081edd6
-    // let baseSearch= `https://api.spoonacular.com/recipes/complexSearch?`
-    // const response= await fetch(`baseSearch`)
-    // const data= await response.json()
-    // let id=""
-    // let baseInfo=`https://api.spoonacular.com/recipes/${id}/information?`
-    // const response= await fetch()
-    // const data= await response.json()
-  // }
-  useEffect(() => {
-// getData()
-  },[])
   return (
-    <>
-      <Homepage/>
-    </>
+    <div>
+    <Header />
+    <Routes>
+      <Route path="/" element={<Homepage/>} />
+      <Route path="/Recipes" element={<Recipes/>} />
+      <Route path="/Recipes/:id" element={<Recipe/>} />
+    </Routes>
+    </div>
   )
 }
 
