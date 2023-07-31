@@ -17,7 +17,7 @@ export default function Recipe() {
     // retrieves data based on input
     async function getData() {
         console.log("in the getData")
-        let apiKey = import.meta.env.REACT_APP_API_KEY
+        let apiKey =  `apiKey=${import.meta.env.VITE_REACT_APP_API_KEY}`
         let baseUrl = `https://api.spoonacular.com/recipes/${id}/information?`//{apiKey}&query=${input}
         const response = await fetch(`${baseUrl}${apiKey}`)
         const fetchedRecipe = await response.json()
@@ -38,7 +38,8 @@ export default function Recipe() {
         // servings
         // price per serving
         // instructions
-        <div>
+        <div className="recipe">
+            
             <p className="title">{data.title}</p>
             <div className="all">
                 <img src={data.image} />

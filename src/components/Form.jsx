@@ -44,10 +44,13 @@ export default function Form(){
 
     return(
         <form onSubmit={handleSubmit}>
-            <label htmlFor="item" className="Label">Search by Item</label>
+            <div>
+            <label htmlFor="item" className="Label">Search by Item </label>
             <input  id="item"value={input.item} onChange={handleChange} ></input>
+            </div>
             <br/>
-            <label htmlFor="cuisine" className="Label"> Search by Cuisine</label>
+            <div>
+            <label htmlFor="cuisine" className="Label"> Search by Cuisine </label>
             <select name="cuisine" id="cuisine" value={input.cuisine} onChange={handleChange}>
                 <option></option>
                 <option>African</option>
@@ -78,8 +81,10 @@ export default function Form(){
                 <option>Thai</option>
                 <option>Vietnamese</option>
             </select>
+            </div>
             <br/>
-            <label htmlFor="diet" className="Label">Select a Diet</label>
+            <div>
+            <label htmlFor="diet" className="Label">Select a Diet </label>
             <select name="diet" id="diet"value={input.diet} onChange={handleChange}>
                 <option></option>
                 <option>Gluten Free</option>
@@ -95,6 +100,7 @@ export default function Form(){
                 <option>Low FODMAP</option>
                 <option>Whole30</option>
             </select>
+            </div>
             <br/>
             <button>Search</button>
         </form>

@@ -4,23 +4,56 @@
   /* padding: 2rem;  */
   /* text-align: center;  */
 /* } */ 
+.pageBackground{
+  background-color: #0fa19d;
+}
+.recipes{
+  text-align: center;
+}
 .Homepage{
   text-align: center;
   margin: 15% 0;
+  /* border: 1px solid black; */
+  padding-bottom: 200px;
+}
+.Homepage input{
+  border: 1px solid black; 
+}
+button{
+  color: white;
+  /* background-color: #2f398d; */
+  background-color: #0fa19d;
+  font-size: 20px;
+}
+.top{
+  position: absolute;
+  top: 25px;
 }
 .Header{
   /* max-width: 1280px; */
   /* margin: 0 50% 0 50% ; */
   /* width:100%; */
   text-align: center;
-  padding: 2rem;
-  border: 1px solid black;
+  padding: 1rem;
+  font-size: 35px;
+  /* border: 1px solid black; */
   background-color: #80ed99;
+}
+.headerImg{
+  width: 150px;
+}
+.Link{
+  color: white;
+  font-size: 30px;
+}
+.recipe{
+  background-color: #0fa19d;
 }
 .title{
   /* border: 1px solid black; */
   font-size: 40px;
   width: 300px;
+  color: white;
   /* margin: 0 50% 0 50%; */
   /* text-align: center; */
 }
@@ -42,20 +75,23 @@ img{
   width: 600px;
   grid-column: 1/2;
   grid-row: 2/3;
-  background-color: #c7f9cc;
+  /* background-color: #c7f9cc; */
+  color: white;
   /* display: inline; */
 }
 .servings{
   /* border: 1px solid black; */
   width: 200px; 
-  background-color: #c7f9cc;
+  /* background-color: #c7f9cc; */
+  color: white;
 }
 .instructions{
   /* border: 1px solid black; */
   width: 500px; 
   grid-column: 2/3;
   grid-row: 1/2;
-  background-color: #c7f9cc;
+  /* background-color: #2f398d; */
+  color: white;
 
 }
 .instructions ol{
@@ -65,7 +101,10 @@ img{
   /* border: 1px solid black; */
   width: 500px; 
   margin-top: 5px;
-  background-color: #c7f9cc;
+  grid-row: 2/3;
+  grid-column: 2/3;
+  /* background-color: #c7f9cc; */
+  color: white;
 }
 ul{
   /* border: 1px solid black; */

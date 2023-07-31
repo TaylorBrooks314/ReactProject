@@ -53,13 +53,14 @@ export default function Recipes(){
     // console.log("---------------Sample Data---------------")
     // console.log(Data)
     return(
-        <div>
+        <div className="pageBackground recipes">
             <p className="title">Recipes</p>
             {data.map((recipe)=>{
                 return(
                     <div key={recipe.id} >
-                        <Link to={`/Recipes/${recipe.id}`}>{recipe.title}</Link>
+                        <Link to={`/Recipes/${recipe.id}`} className="Link">{recipe.title}</Link>
                         <br />
+                        <br/>
                         {/* wont allow me to do alt= `${recipe.title} Image` */}
                         <img src={recipe.image} alt={recipe.title}/>
                     </div>
