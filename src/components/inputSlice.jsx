@@ -3,7 +3,8 @@ import {createSlice} from "@reduxjs/toolkit"
 const initialState = {
     item:"",
     cuisine:"",
-    diet:""
+    diet:"",
+    type:""
 }
 
 const inputSlice = createSlice({
@@ -22,9 +23,13 @@ const inputSlice = createSlice({
         setDiet: (state, action) => {
             state.diet = action.payload
         },
+        setType:(state ,action) =>{
+            state.type = action.payload
+            console.log(action.payload)
+        }
     }
 })
 
 export default inputSlice.reducer
 
-export const {setItem, setCuisine, setDiet}= inputSlice.actions
+export const {setItem, setCuisine, setDiet, setType}= inputSlice.actions

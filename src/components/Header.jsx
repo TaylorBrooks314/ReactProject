@@ -10,7 +10,7 @@ export default function Header(){
         <div>
             <button onClick={handleClick} className="top">Search again</button>
             <div className="Header">
-            <img src="src/assets/images/Web capture_31-7-2023_125848_www.logomaker.com.jpeg" className="headerImg"/>
+            <img src="assets\images\Web capture_31-7-2023_125848_www.logomaker.com.jpeg" className="headerImg"/>
             </div>
         </div>
     )

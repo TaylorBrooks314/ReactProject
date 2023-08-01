@@ -6,7 +6,8 @@ import { useParams } from "react-router-dom"
 
 export default function Recipe() {
     let [data, setData] = useState({})
-    let [nutriLabel,setNutriLabel]=useState([])
+
+    // use params to get id to make call for single recipe
     let params = useParams()
     let id = params.id
 
@@ -25,15 +26,12 @@ export default function Recipe() {
         //got it !!  
         console.log(fetchedRecipe)
         console.log(data)
-        let baseUrl2=`https://api.spoonacular.com/recipes/${id}/nutritionLabel.png?`
-        const response2= await fetch(`${baseUrl2}${apiKey}`)
-        const fetchedImg = await response2.blob()
-        setNutriLabel(fetchedImg)
-
     }
+    
     console.log(data)
     return (
-        // we need the ingredients
+        // we need the 
+        // ingredients
         // summary 
         // servings
         // price per serving
@@ -42,7 +40,7 @@ export default function Recipe() {
             
             <p className="title">{data.title}</p>
             <div className="all">
-                <img src={data.image} />
+                <img src={data.image} className="dish"/>
                 {/* formatted weird */}
                 <div className="summary">
                     <p className="Label">Summary</p>
@@ -52,7 +50,8 @@ export default function Recipe() {
                     <p className="Label">Serving Information</p>
                     <p >Number of servings: {data.servings}</p>
                     <p >Price per serving: ${(data.pricePerServing/100).toFixed(2)}</p>
-                    <img src={nutriLabel}/>
+                    <p> Total price: ${data.servings * (data.pricePerServing/100).toFixed(2)}</p>
+                    <img src={`https://api.spoonacular.com/recipes/${id}/nutritionLabel.png?apiKey=${import.meta.env.VITE_REACT_APP_API_KEY}`} className="nutriLabel"/>
                 </div>
                 <div className="instructions">
                     <p className="Label">Instructions</p>

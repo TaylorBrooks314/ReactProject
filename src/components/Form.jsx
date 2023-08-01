@@ -1,5 +1,5 @@
 // import {useState} from "react"
-import { setItem,setCuisine,setDiet } from "./inputSlice";
+import { setItem,setCuisine,setDiet, setType } from "./inputSlice";
 import {useDispatch, useSelector} from "react-redux"
 import {useNavigate} from "react-router-dom"
 
@@ -24,8 +24,10 @@ export default function Form(){
         dispatch(setItem(evt.target.value))
         }else if(evt.target.id == "cuisine"){
             dispatch(setCuisine(evt.target.value))
-        }else{
+        }else if (evt.target.id == "diet"){
             dispatch(setDiet(evt.target.value))
+        }else if(evt.target.id == "type"){
+            dispatch(setType(evt.target.value))
         }
     
     // logic to setInput incase not using redux
@@ -102,6 +104,27 @@ export default function Form(){
             </select>
             </div>
             <br/>
+            <div>
+                <label htmlFor="type" className="Label">Select a type of meal</label>
+                <select name="type" id="type" value={input.type} onChange={handleChange}>
+                    <option></option>
+                    <option>Main Course</option>
+                    <option>Side Dish</option>
+                    <option>Dessert</option>
+                    <option>Appetizer</option>
+                    <option>Salad</option>
+                    <option>Bread</option>
+                    <option>Breakfast</option>
+                    <option>Soup</option>
+                    <option>Beverage</option>
+                    <option>Sauce</option>
+                    <option>Marinade</option>
+                    <option>Finger-food</option>
+                    <option>Snack</option>
+                    <option>Drink</option>
+                </select>
+            </div>
+            <br />
             <button>Search</button>
         </form>
     )
