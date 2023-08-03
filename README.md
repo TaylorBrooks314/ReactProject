@@ -23,8 +23,7 @@ Include logo/demo screenshot etc.
      - Cuisine (ex. American, Asian, Greek)
      - Diet (ex. vegan, vegetarian, keto)
      - Type of dish (ex. dessert, side dish, drink)
-       
-  - Nutrition Facts label 
+* Nutrition Facts label 
 
 # API Reference
 
