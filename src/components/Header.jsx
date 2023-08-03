@@ -10,7 +10,7 @@ export default function Header(){
         <div>
             <button onClick={handleClick} className="top">Search again</button>
             <div className="Header">
-            <img src="./assets/images/logo.jpeg" className="headerImg"/>
+            <img src="src\assets\logo.jpeg" className="headerImg"/>
             </div>
         </div>
     )
