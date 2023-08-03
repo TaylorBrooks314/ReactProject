@@ -5,8 +5,8 @@ import { useParams } from "react-router-dom"
 
 
 export default function Recipe() {
-    let [data, setData] = useState({})
-
+    const [data, setData] = useState({})
+    const [loading, setLoading] = useState(true)
     // use params to get id to make call for single recipe
     let params = useParams()
     let id = params.id
@@ -22,6 +22,7 @@ export default function Recipe() {
         let baseUrl = `https://api.spoonacular.com/recipes/${id}/information?`//{apiKey}&query=${input}
         const response = await fetch(`${baseUrl}${apiKey}`)
         const fetchedRecipe = await response.json()
+        setLoading(false)
         setData(fetchedRecipe)
         //got it !!  
         console.log(fetchedRecipe)
@@ -37,8 +38,8 @@ export default function Recipe() {
         // price per serving
         // instructions
         <div className="recipe">
-            
-            <p className="title">{data.title}</p>
+            {loading? <>Loading...</>:
+            <p className="title">{data.title}</p>}
             <div className="all">
                 <img src={data.image} className="dish"/>
                 {/* formatted weird */}
