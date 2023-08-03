@@ -1,6 +1,6 @@
 # Food Finder
 
-This project was assignment for the bootcamp that I am currently attending. For this assingnment I had to use an API and UseEffect to create a webpage of my choice. I chose to create a "online recipe book". The user can search for recipes using as many or as few of the filters as they would like. It will then give the user 10 different recipes to choice from. Once the user chooses a recipe they will get a summary about the recipe, the ingredients they would need to make the recipe, the instructions on how to make it, and information about the servings including the nutrition facts. Check it out here.
+This project was assignment for the bootcamp that I am currently attending. For this assingnment I had to use an API and UseEffect to create a webpage of my choice. I chose to create a "online recipe book". The user can search for recipes using as many or as few of the filters as they would like. It will then give the user 10 different recipes to choice from. Once the user chooses a recipe they will get a summary about the recipe, the ingredients they would need to make the recipe, the instructions on how to make it, and information about the servings including the nutrition facts. Check it out [here](https://spoonacular.com/food-api/docs#Search-Recipes-Complex).
 
 # My Motivation
 A short description of the motivation behind the creation and maintenance of the project. This should explain why the project exists.
