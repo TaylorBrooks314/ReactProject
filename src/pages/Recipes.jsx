@@ -7,7 +7,8 @@ export default function Recipes(){
  //to access input  
     const input =useSelector((state)=> state.input)
     // input.item, input.cuisine, input.diet, input.type
-
+    const[data,setData]=useState([])
+    const [loading, setLoading]= useState(true)
     // this allows for the user to narrow the search without errors
     let item
     let cuisine
@@ -35,7 +36,6 @@ export default function Recipes(){
     }else{
         type=""
     }
-    const[data,setData]=useState([])
     console.log(item)
     console.log(cuisine)
     console.log(diet)
@@ -53,6 +53,7 @@ export default function Recipes(){
         let baseUrl= `https://api.spoonacular.com/recipes/complexSearch?`//{apiKey}&query=${input}
         const response= await fetch(`${baseUrl}${apiKey}${item}${cuisine}${diet}${type}&instructionsRequired=true`)
         const fetchedRecipes= await response.json()
+        setLoading(false)
         setData(fetchedRecipes.results)
         console.log(fetchedRecipes)
     }
@@ -61,7 +62,8 @@ export default function Recipes(){
     
     return(
         <div className="pageBackground recipes">
-            <p className="title">Recipes</p>
+            {loading ? <>Loading...</>: 
+            <p className="title">Recipes: {data.length}</p>}
             {data.map((recipe)=>{
                 return(
                     <div key={recipe.id} >
@@ -72,7 +74,6 @@ export default function Recipes(){
                     </div>
                 )
             })}
-            
         </div> 
     )
 }
