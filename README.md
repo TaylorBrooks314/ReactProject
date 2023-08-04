@@ -11,6 +11,8 @@ Include logo/demo screenshot etc.
 
 # Tech/framework used
 - Javascript
+- CSS
+- HTML
 - React
 - Redux
 
